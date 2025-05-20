@@ -135,8 +135,8 @@ const ChatInterface = () => {
                 <div 
                   className={`p-4 max-w-[80%] break-words shadow-lg ${
                     message.role === 'user' 
-                      ? 'chat-bubble-user bg-gradient-to-r from-primary/90 to-primary rounded-2xl rounded-br-sm text-white' 
-                      : 'chat-bubble-ai bg-white/10 backdrop-blur-sm rounded-2xl rounded-bl-sm border border-gray-700/50'
+                      ? 'chat-bubble-user bg-primary rounded-2xl rounded-br-sm text-white' 
+                      : 'chat-bubble-ai bg-[#2a2a2a] rounded-2xl rounded-bl-sm border border-gray-700'
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
