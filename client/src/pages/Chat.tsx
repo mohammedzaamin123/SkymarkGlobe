@@ -4,7 +4,7 @@ import ChatInterface from "@/components/ChatInterface";
 const Chat = () => {
   return (
     <motion.section 
-      className="min-h-screen flex flex-col h-full"
+      className="min-h-[calc(100vh-64px)] flex flex-col"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

@@ -28,21 +28,23 @@ function App() {
 
   return (
     <TooltipProvider>
-      <div className="flex flex-col h-screen overflow-hidden bg-dark text-gray-100">
+      <div className="flex flex-col h-screen overflow-hidden bg-[#121212] text-gray-100">
         <TopNavbar />
 
-        <main className="flex-grow overflow-y-auto bg-dark">
-          <AnimatePresence mode="wait">
-            <Switch>
-              <Route path="/" component={Home} />
-              <Route path="/chat" component={Chat} />
-              <Route path="/destinations" component={Destinations} />
-              <Route path="/about" component={About} />
-              <Route path="/faq" component={FAQ} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NotFound} />
-            </Switch>
-          </AnimatePresence>
+        <main className="flex-grow overflow-y-auto bg-[#121212]">
+          <div className="container mx-auto px-4 py-4 lg:py-6">
+            <AnimatePresence mode="wait">
+              <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/chat" component={Chat} />
+                <Route path="/destinations" component={Destinations} />
+                <Route path="/about" component={About} />
+                <Route path="/faq" component={FAQ} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NotFound} />
+              </Switch>
+            </AnimatePresence>
+          </div>
         </main>
 
         <AuthModals />

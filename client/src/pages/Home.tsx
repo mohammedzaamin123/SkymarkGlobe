@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <section className="min-h-screen overflow-x-hidden">
+    <section className="min-h-[calc(100vh-64px)] overflow-x-hidden">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-dark-lighter">
         {/* Hero Background with Overlay */}

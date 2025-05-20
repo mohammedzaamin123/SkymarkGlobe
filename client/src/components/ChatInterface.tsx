@@ -85,14 +85,16 @@ const ChatInterface = () => {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="bg-gradient-to-r from-primary/90 to-primary p-4 shadow-md">
-        <h1 className="text-2xl font-bold text-center text-white">Chat with SkyMate</h1>
-        <p className="text-center text-white/80 text-sm">Your personal AI assistant for study abroad guidance</p>
+      <div className="bg-[#1a1a1a] p-4 shadow-md border-b border-gray-800">
+        <h1 className="text-2xl font-bold mb-1 text-white flex items-center justify-center">
+          <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Chat with SkyMate</span>
+          <i className="fas fa-robot ml-2 text-primary/80 text-xl"></i>
+        </h1>
+        <p className="text-center text-gray-400 text-sm">Your personal AI assistant for study abroad guidance</p>
       </div>
       
       <div 
-        className="flex-grow p-4 overflow-y-auto bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80')] bg-fixed bg-cover bg-opacity-5"
-        style={{ backgroundBlendMode: 'overlay', backgroundColor: 'rgba(0,0,0,0.85)' }}
+        className="flex-grow p-4 overflow-y-auto bg-[#161616]"
         id="chat-messages"
         ref={chatContainerRef}
       >
@@ -166,14 +168,14 @@ const ChatInterface = () => {
         )}
       </div>
       
-      <div className="p-4 bg-dark-lighter border-t border-gray-800">
+      <div className="p-4 bg-[#1a1a1a] border-t border-gray-800">
         <form onSubmit={handleSubmit} className="flex relative">
           <input 
             type="text" 
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             placeholder="Ask me anything about studying abroad..."
-            className="flex-grow bg-dark border border-gray-700 rounded-full px-6 py-3 pr-14 focus:outline-none focus:ring-2 focus:ring-primary shadow-lg"
+            className="flex-grow bg-[#2a2a2a] border border-gray-700 rounded-full px-6 py-3 pr-14 focus:outline-none focus:ring-2 focus:ring-primary shadow-lg text-gray-200"
             disabled={sendMessageMutation.isPending}
           />
           <button 
