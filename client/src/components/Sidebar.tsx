@@ -70,40 +70,40 @@ const Sidebar = () => {
 
       <nav className="space-y-2 flex-grow">
         <Link href="/">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-home w-6"></i>
             <span>Home</span>
-          </a>
+          </span>
         </Link>
         <Link href="/chat">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/chat' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/chat' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-comment-alt w-6"></i>
             <span>Chat</span>
-          </a>
+          </span>
         </Link>
         <Link href="/destinations">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/destinations' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/destinations' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-map-marked-alt w-6"></i>
             <span>Destinations</span>
-          </a>
+          </span>
         </Link>
         <Link href="/about">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/about' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/about' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-info-circle w-6"></i>
             <span>About Us</span>
-          </a>
+          </span>
         </Link>
         <Link href="/faq">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/faq' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/faq' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-question-circle w-6"></i>
             <span>FAQs</span>
-          </a>
+          </span>
         </Link>
         <Link href="/contact">
-          <a className={`flex items-center p-3 rounded-lg transition-colors ${location === '/contact' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/contact' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-envelope w-6"></i>
             <span>Contact</span>
-          </a>
+          </span>
         </Link>
       </nav>
 

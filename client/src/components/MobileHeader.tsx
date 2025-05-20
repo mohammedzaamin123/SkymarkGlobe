@@ -17,10 +17,10 @@ const MobileHeader = () => {
     <header className="md:hidden bg-dark-lighter p-4 flex justify-between items-center shadow-lg">
       <div className="flex items-center">
         <Link href="/">
-          <a className="text-2xl font-bold text-white flex items-center">
+          <span className="text-2xl font-bold text-white flex items-center cursor-pointer">
             <i className="fas fa-globe-americas text-primary mr-2"></i>
             Skymark
-          </a>
+          </span>
         </Link>
       </div>
       <button 
