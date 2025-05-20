@@ -250,7 +250,7 @@ const AuthModals = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-lg transition-colors flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-primary/90 to-primary text-white font-medium py-3 rounded-full transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center"
                   disabled={isLoginLoading}
                 >
                   {isLoginLoading ? (
@@ -261,16 +261,21 @@ const AuthModals = () => {
                 </button>
               </form>
               
-              <div className="mt-4">
+              <div className="mt-6">
+                <div className="relative flex items-center justify-center mb-4">
+                  <div className="border-t border-gray-700 flex-grow"></div>
+                  <span className="mx-4 text-xs text-gray-500 uppercase">Or continue with</span>
+                  <div className="border-t border-gray-700 flex-grow"></div>
+                </div>
                 <button 
                   onClick={handleGoogleSignIn} 
-                  className="w-full border border-gray-600 bg-dark text-white py-2 rounded-lg transition-colors flex items-center justify-center"
+                  className="w-full border border-gray-700 bg-dark/50 text-white py-3 rounded-full transition-all hover:bg-dark flex items-center justify-center"
                   disabled={isGoogleLoading}
                 >
                   {isGoogleLoading ? (
                     <><i className="fas fa-spinner fa-spin mr-2"></i> Connecting...</>
                   ) : (
-                    <><i className="fab fa-google mr-2"></i> Sign in with Google</>
+                    <><i className="fab fa-google mr-2 text-red-500"></i> Sign in with Google</>
                   )}
                 </button>
               </div>
@@ -378,7 +383,7 @@ const AuthModals = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-lg transition-colors flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-primary/90 to-primary text-white font-medium py-3 rounded-full transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center"
                   disabled={isSignupLoading}
                 >
                   {isSignupLoading ? (
@@ -389,16 +394,21 @@ const AuthModals = () => {
                 </button>
               </form>
               
-              <div className="mt-4">
+              <div className="mt-6">
+                <div className="relative flex items-center justify-center mb-4">
+                  <div className="border-t border-gray-700 flex-grow"></div>
+                  <span className="mx-4 text-xs text-gray-500 uppercase">Or continue with</span>
+                  <div className="border-t border-gray-700 flex-grow"></div>
+                </div>
                 <button 
                   onClick={handleGoogleSignIn} 
-                  className="w-full border border-gray-600 bg-dark text-white py-2 rounded-lg transition-colors flex items-center justify-center"
+                  className="w-full border border-gray-700 bg-dark/50 text-white py-3 rounded-full transition-all hover:bg-dark flex items-center justify-center"
                   disabled={isGoogleLoading}
                 >
                   {isGoogleLoading ? (
                     <><i className="fas fa-spinner fa-spin mr-2"></i> Connecting...</>
                   ) : (
-                    <><i className="fab fa-google mr-2"></i> Sign up with Google</>
+                    <><i className="fab fa-google mr-2 text-red-500"></i> Sign up with Google</>
                   )}
                 </button>
               </div>

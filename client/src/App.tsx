@@ -15,8 +15,7 @@ import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
 // Components
-import Sidebar from "./components/Sidebar";
-import MobileHeader from "./components/MobileHeader";
+import TopNavbar from "./components/TopNavbar";
 import AuthModals from "./components/AuthModals";
 
 function App() {
@@ -29,9 +28,8 @@ function App() {
 
   return (
     <TooltipProvider>
-      <div className="flex flex-col md:flex-row h-screen overflow-hidden bg-dark text-gray-100">
-        <MobileHeader />
-        <Sidebar />
+      <div className="flex flex-col h-screen overflow-hidden bg-dark text-gray-100">
+        <TopNavbar />
 
         <main className="flex-grow overflow-y-auto bg-dark">
           <AnimatePresence mode="wait">
