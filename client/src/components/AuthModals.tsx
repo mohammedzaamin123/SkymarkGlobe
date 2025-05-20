@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
-import { signInWithGoogle, signIn, createAccount } from "../lib/firebase";
+import { login, register } from "../lib/authService";
 import { useToast } from "@/hooks/use-toast";
 
 const AuthModals = () => {

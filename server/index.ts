@@ -1,10 +1,23 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { connectToDatabase } from "./db/connection";
+import cookieParser from "cookie-parser";
+import authRoutes from "./routes/authRoutes";
+
+// Connect to MongoDB
+connectToDatabase().catch(err => {
+  console.error("Failed to connect to MongoDB", err);
+  process.exit(1);
+});
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+// Register authentication routes
+app.use('/api/auth', authRoutes);
 
 app.use((req, res, next) => {
   const start = Date.now();
