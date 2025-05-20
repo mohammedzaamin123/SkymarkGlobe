@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { useAuthStore } from "./store/authStore";
-import { onAuthStateChanged } from "./lib/firebase";
 
 // Pages
 import Home from "@/pages/Home";
@@ -22,20 +21,6 @@ import AuthModals from "./components/AuthModals";
 
 function App() {
   const [location] = useLocation();
-  const { setUser } = useAuthStore();
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged((user) => {
-      setUser(user ? {
-        uid: user.uid,
-        email: user.email,
-        displayName: user.displayName || user.email?.split('@')[0] || 'User',
-        photoURL: user.photoURL
-      } : null);
-    });
-
-    return () => unsubscribe();
-  }, [setUser]);
 
   useEffect(() => {
     // Scroll to top when route changes

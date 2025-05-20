@@ -56,7 +56,12 @@ const AuthModals = () => {
     
     setIsLoginLoading(true);
     try {
-      await signIn(loginEmail, loginPassword);
+      const result = await login({ email: loginEmail, password: loginPassword });
+      const { user, token } = result;
+      
+      // Update auth store with user and token
+      useAuthStore.getState().setAuthData(user, token);
+      
       setShowLoginModal(false);
       toast({
         title: "Success",
@@ -104,7 +109,18 @@ const AuthModals = () => {
     
     setIsSignupLoading(true);
     try {
-      await createAccount(signupEmail, signupPassword);
+      const result = await register({
+        username: name,
+        email: signupEmail,
+        password: signupPassword,
+        displayName: name
+      });
+      
+      const { user, token } = result;
+      
+      // Update auth store with user and token
+      useAuthStore.getState().setAuthData(user, token);
+      
       setShowSignupModal(false);
       toast({
         title: "Success",
@@ -124,12 +140,11 @@ const AuthModals = () => {
   const handleGoogleSignIn = async () => {
     setIsGoogleLoading(true);
     try {
-      await signInWithGoogle();
-      setShowLoginModal(false);
-      setShowSignupModal(false);
+      // Note: Google sign-in is not implemented with MongoDB
+      // This is a placeholder for future implementation
       toast({
-        title: "Success",
-        description: "Logged in with Google successfully"
+        title: "Info",
+        description: "Google sign-in is not available with MongoDB authentication."
       });
     } catch (error: any) {
       toast({
