@@ -34,7 +34,7 @@ const ChatInterface = () => {
 
   const sendMessageMutation = useMutation({
     mutationFn: async (message: string) => {
-      const response = await apiRequest('POST', '/api/ask', { message, userId: user?.uid });
+      const response = await apiRequest('POST', '/api/ask', { message, userId: user?._id });
       return response.json();
     },
     onSuccess: (data) => {
@@ -85,12 +85,14 @@ const ChatInterface = () => {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="bg-dark-lighter p-4 shadow-md">
-        <h1 className="text-2xl font-bold text-center">Chat with GlobeMate</h1>
+      <div className="bg-gradient-to-r from-primary/90 to-primary p-4 shadow-md">
+        <h1 className="text-2xl font-bold text-center text-white">Chat with SkyMate</h1>
+        <p className="text-center text-white/80 text-sm">Your personal AI assistant for study abroad guidance</p>
       </div>
       
       <div 
-        className="flex-grow p-4 overflow-y-auto" 
+        className="flex-grow p-4 overflow-y-auto bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80')] bg-fixed bg-cover bg-opacity-5"
+        style={{ backgroundBlendMode: 'overlay', backgroundColor: 'rgba(0,0,0,0.85)' }}
         id="chat-messages"
         ref={chatContainerRef}
       >
@@ -105,8 +107,11 @@ const ChatInterface = () => {
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center mr-2 flex-shrink-0">
                 <i className="fas fa-robot text-white text-sm"></i>
               </div>
-              <div className="chat-bubble-ai bg-dark-lighter p-3 max-w-[80%] rounded-lg rounded-bl-sm">
-                <p>Hi! I'm GlobeMate, your AI guide to studying abroad 🌍✈️ — where would you like to study?</p>
+              <div className="chat-bubble-ai bg-white/10 backdrop-blur-sm p-4 max-w-[80%] rounded-2xl rounded-bl-sm border border-gray-700/50 shadow-lg">
+                <p>Hi! I'm SkyMate, your AI guide to studying abroad 🌍✈️ I can help you with university recommendations, visa requirements, scholarships, and more. Where are you thinking of studying?</p>
+                <div className="text-xs text-gray-400 mt-1 text-right">
+                  {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                </div>
               </div>
             </motion.div>
           ) : (
@@ -126,13 +131,16 @@ const ChatInterface = () => {
                 )}
                 
                 <div 
-                  className={`p-3 max-w-[80%] break-words ${
+                  className={`p-4 max-w-[80%] break-words shadow-lg ${
                     message.role === 'user' 
-                      ? 'chat-bubble-user bg-primary/80 rounded-lg rounded-br-sm' 
-                      : 'chat-bubble-ai bg-dark-lighter rounded-lg rounded-bl-sm'
+                      ? 'chat-bubble-user bg-gradient-to-r from-primary/90 to-primary rounded-2xl rounded-br-sm text-white' 
+                      : 'chat-bubble-ai bg-white/10 backdrop-blur-sm rounded-2xl rounded-bl-sm border border-gray-700/50'
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{message.content}</p>
+                  <div className="text-xs text-gray-400 mt-1 text-right">
+                    {new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                  </div>
                 </div>
                 
                 {message.role === 'user' && (
@@ -158,24 +166,31 @@ const ChatInterface = () => {
         )}
       </div>
       
-      <div className="p-4 bg-dark-lighter">
-        <form onSubmit={handleSubmit} className="flex">
+      <div className="p-4 bg-dark-lighter border-t border-gray-800">
+        <form onSubmit={handleSubmit} className="flex relative">
           <input 
             type="text" 
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             placeholder="Ask me anything about studying abroad..."
-            className="flex-grow bg-dark border border-gray-700 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex-grow bg-dark border border-gray-700 rounded-full px-6 py-3 pr-14 focus:outline-none focus:ring-2 focus:ring-primary shadow-lg"
             disabled={sendMessageMutation.isPending}
           />
           <button 
             type="submit" 
-            className="bg-primary hover:bg-primary/90 text-white px-4 rounded-r-lg transition-colors"
+            className={`absolute right-1 top-1 h-10 w-10 flex items-center justify-center rounded-full transition-colors ${sendMessageMutation.isPending ? 'bg-gray-600' : 'bg-primary hover:bg-primary/80'} text-white`}
             disabled={sendMessageMutation.isPending}
           >
-            <i className="fas fa-paper-plane"></i>
+            {sendMessageMutation.isPending ? (
+              <span className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
+            ) : (
+              <i className="fas fa-paper-plane"></i>
+            )}
           </button>
         </form>
+        <div className="text-center text-xs text-gray-500 mt-2">
+          Powered by AI • Ask about universities, visa requirements, scholarships, and more
+        </div>
       </div>
     </div>
   );

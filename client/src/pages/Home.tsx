@@ -37,14 +37,14 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Link href="/chat">
-              <a className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg transition-colors">
+              <span className="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg transition-colors cursor-pointer inline-block">
                 Start Chatting
-              </a>
+              </span>
             </Link>
             <Link href="/about">
-              <a className="px-6 py-3 bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium rounded-lg transition-colors">
+              <span className="px-6 py-3 bg-transparent border-2 border-white hover:bg-white/10 text-white font-medium rounded-lg transition-colors cursor-pointer inline-block">
                 Learn More
-              </a>
+              </span>
             </Link>
           </motion.div>
         </div>
