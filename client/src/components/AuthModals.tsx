@@ -207,7 +207,9 @@ const AuthModals = () => {
                 <i className="fas fa-times"></i>
               </button>
               
-              <h2 className="text-2xl font-bold mb-6 text-center">Log In to Skymark</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center text-white">
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Log In to Skymark</span>
+              </h2>
               
               <form onSubmit={handleLoginSubmit} className="space-y-4">
                 <div>
@@ -312,7 +314,9 @@ const AuthModals = () => {
                 <i className="fas fa-times"></i>
               </button>
               
-              <h2 className="text-2xl font-bold mb-6 text-center">Create Your Skymark Account</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center text-white">
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Create Your Skymark Account</span>
+              </h2>
               
               <form onSubmit={handleSignupSubmit} className="space-y-4">
                 <div>

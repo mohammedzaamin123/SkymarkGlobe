@@ -82,25 +82,25 @@ const Sidebar = () => {
           </span>
         </Link>
         <Link href="/destinations">
-          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/destinations' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-xl transition-all cursor-pointer shadow-sm ${location === '/destinations' ? 'text-white bg-gradient-to-r from-primary/90 to-primary font-medium' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-map-marked-alt w-6"></i>
             <span>Destinations</span>
           </span>
         </Link>
         <Link href="/about">
-          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/about' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-xl transition-all cursor-pointer shadow-sm ${location === '/about' ? 'text-white bg-gradient-to-r from-primary/90 to-primary font-medium' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-info-circle w-6"></i>
             <span>About Us</span>
           </span>
         </Link>
         <Link href="/faq">
-          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/faq' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-xl transition-all cursor-pointer shadow-sm ${location === '/faq' ? 'text-white bg-gradient-to-r from-primary/90 to-primary font-medium' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-question-circle w-6"></i>
             <span>FAQs</span>
           </span>
         </Link>
         <Link href="/contact">
-          <span className={`flex items-center p-3 rounded-lg transition-colors cursor-pointer ${location === '/contact' ? 'text-white bg-primary hover:bg-primary/80' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
+          <span className={`flex items-center p-3 rounded-xl transition-all cursor-pointer shadow-sm ${location === '/contact' ? 'text-white bg-gradient-to-r from-primary/90 to-primary font-medium' : 'text-gray-300 hover:bg-dark hover:text-white'}`}>
             <i className="fas fa-envelope w-6"></i>
             <span>Contact</span>
           </span>
